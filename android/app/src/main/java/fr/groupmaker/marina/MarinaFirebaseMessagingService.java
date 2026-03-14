@@ -19,7 +19,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import fr.groupmaker.app.MainActivity;
-import fr.groupmaker.app.R;
+import fr.groupmaker.marina.R;
 
 public class MarinaFirebaseMessagingService extends FirebaseMessagingService {
 
