@@ -74,6 +74,7 @@ public class MarinaFirebaseMessagingService extends FirebaseMessagingService {
                 NotificationManager.IMPORTANCE_HIGH
             );
             channel.setDescription("Notifications de chat Marina");
+            channel.setShowBadge(true);
             manager.createNotificationChannel(channel);
         }
 
