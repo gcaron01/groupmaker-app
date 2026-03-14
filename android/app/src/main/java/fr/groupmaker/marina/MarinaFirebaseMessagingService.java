@@ -43,10 +43,13 @@ public class MarinaFirebaseMessagingService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        String title  = remoteMessage.getData().get("title");
-        String body   = remoteMessage.getData().get("body");
-        String url    = remoteMessage.getData().get("url");
-        String avatar = remoteMessage.getData().get("avatar_url");
+        String title       = remoteMessage.getData().get("title");
+        String body        = remoteMessage.getData().get("body");
+        String url         = remoteMessage.getData().get("url");
+        String avatar      = remoteMessage.getData().get("avatar_url");
+        String unreadStr   = remoteMessage.getData().get("unread_count");
+        int    unreadCount = 0;
+        try { unreadCount = Integer.parseInt(unreadStr != null ? unreadStr : "0"); } catch (Exception ignored) {}
 
         if (title == null) {
             // Fallback to notification payload if no data payload
@@ -56,10 +59,10 @@ public class MarinaFirebaseMessagingService extends FirebaseMessagingService {
             }
         }
 
-        showNotification(title, body, url, avatar);
+        showNotification(title, body, url, avatar, unreadCount);
     }
 
-    private void showNotification(String title, String body, String url, String avatarUrl) {
+    private void showNotification(String title, String body, String url, String avatarUrl, int unreadCount) {
         NotificationManager manager =
             (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -92,6 +95,7 @@ public class MarinaFirebaseMessagingService extends FirebaseMessagingService {
             .setContentText(body)
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setNumber(unreadCount > 0 ? unreadCount : 1)
             .setContentIntent(pendingIntent);
 
         // Load sender avatar if available
