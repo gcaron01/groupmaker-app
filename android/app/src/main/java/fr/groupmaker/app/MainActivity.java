@@ -93,8 +93,16 @@ public class MainActivity extends BridgeActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                // After each page load, try to register token if not yet sent
                 tryRegisterToken();
+            }
+
+            @Override
+            public void onReceivedError(WebView view, android.webkit.WebResourceRequest request,
+                    android.webkit.WebResourceError error) {
+                // Only intercept main frame errors (not sub-resources)
+                if (request.isForMainFrame()) {
+                    view.loadUrl("file:///android_asset/offline.html");
+                }
             }
         });
 

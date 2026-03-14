@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Marina — Hors ligne</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #20466e;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .icon {
+    font-size: 72px;
+    margin-bottom: 24px;
+    opacity: 0.9;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  p {
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 1.5;
+    max-width: 280px;
+    margin-bottom: 40px;
+  }
+  button {
+    background: #fff;
+    color: #20466e;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  button:active { opacity: 0.85; transform: scale(0.98); }
+</style>
+</head>
+<body>
+  <div class="icon">⚓</div>
+  <h1>Pas de connexion</h1>
+  <p>Vérifie ta connexion internet et réessaie.</p>
+  <button onclick="window.location.href='https://marina.groupmaker.fr'">
+    Réessayer
+  </button>
+</body>
+</html>
