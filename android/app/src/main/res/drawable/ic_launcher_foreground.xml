@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GroupMaker adaptive icon foreground: "G" letter -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Letter G centered in safe zone (24dp inset = viewport 24-84) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,27C39.1,27 27,39.1 27,54s12.1,27 27,27c8.8,0 16.5,-4.2 21.4,-10.6l-8.5,-6.2C63.8,68.4 59.1,72 54,72c-9.9,0 -18,-8.1 -18,-18s8.1,-18 18,-18c4.8,0 9.0,1.9 12.2,5.0L60,47h22V27l-7.6,7.6C68.5,28.7 61.8,27 54,27z" />
+</vector>

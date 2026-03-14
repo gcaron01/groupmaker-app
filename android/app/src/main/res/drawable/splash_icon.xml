@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GroupMaker splash icon: stylized "G" in a circle -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="288dp"
+    android:height="288dp"
+    android:viewportWidth="288"
+    android:viewportHeight="288">
+
+    <!-- Circle background -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M144,144m-130,0a130,130 0,1,1 260,0a130,130 0,1,1 -260,0" />
+
+    <!-- Letter G -->
+    <path
+        android:fillColor="#20466e"
+        android:pathData="M144,56C95.4,56 56,95.4 56,144s39.4,88 88,88c28.6,0 53.8,-13.6 69.8,-34.7l-27.6,-20.1C176.5,189.8 161.3,200 144,200c-30.9,0 -56,-25.1 -56,-56s25.1,-56 56,-56c15.5,0 29.5,6.3 39.6,16.4L160,128h72V56l-24.8,24.8C192.1,65.7 169.5,56 144,56z" />
+</vector>

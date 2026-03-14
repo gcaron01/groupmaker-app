@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "413621338430",
+    "project_id": "groupmaker-marina",
+    "storage_bucket": "groupmaker-marina.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413621338430:android:d81d256d10254d56cf2c6f",
+        "android_client_info": {
+          "package_name": "fr.groupmaker.marina"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb97nz2zq-T2dIeBQlCe0iPXTT5thTPBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

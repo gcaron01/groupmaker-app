@@ -1,0 +1,12 @@
+{
+  "appId": "fr.groupmaker.marina",
+  "appName": "Marina",
+  "webDir": "www",
+  "server": {
+    "url": "https://marina.groupmaker.fr",
+    "cleartext": false
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

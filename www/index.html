@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Marina</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+  body{
+    background:#20466e;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    color:#fff;
+  }
+  .logo{
+    width:88px;height:88px;margin-bottom:24px;
+    background:#fff;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:44px;font-weight:700;color:#20466e;
+    animation:pulse 1.8s ease-in-out infinite;
+  }
+  .title{font-size:22px;font-weight:600;letter-spacing:.5px;margin-bottom:8px}
+  .sub{font-size:13px;opacity:.7;margin-bottom:32px}
+  .spinner{
+    width:32px;height:32px;
+    border:3px solid rgba(255,255,255,.25);
+    border-top-color:#fff;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+  }
+  .offline{
+    display:none;text-align:center;margin-top:24px;
+    padding:16px 24px;background:rgba(255,255,255,.12);
+    border-radius:12px;max-width:280px;
+  }
+  .offline button{
+    margin-top:12px;padding:10px 28px;
+    background:#fff;color:#20466e;
+    border:none;border-radius:8px;
+    font-size:15px;font-weight:600;cursor:pointer;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+</style>
+</head>
+<body>
+  <div class="logo" style="font-size:28px">M</div>
+  <div class="title">Marina</div>
+  <div class="sub">Chargement&hellip;</div>
+  <div class="spinner" id="spinner"></div>
+  <div class="offline" id="offline">
+    <div>Connexion impossible.<br>V&eacute;rifie ta connexion internet.</div>
+    <button onclick="location.reload()">R&eacute;essayer</button>
+  </div>
+<script>
+  var TARGET = 'https://marina.groupmaker.fr';
+  var TIMEOUT = 8000;
+
+  function go() {
+    window.location.href = TARGET;
+  }
+
+  if (navigator.onLine) {
+    setTimeout(go, 600);
+  } else {
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('offline').style.display = 'block';
+  }
+
+  setTimeout(function() {
+    if (document.getElementById('spinner')) {
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('offline').style.display = 'block';
+    }
+  }, TIMEOUT);
+
+  window.addEventListener('online', go);
+</script>
+</body>
+</html>
