@@ -90,21 +90,27 @@ public class MarinaFirebaseMessagingService extends FirebaseMessagingService {
             PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
         );
 
+        String safeTitle = title != null && !title.isEmpty() ? title : "Marina";
+        String safeBody  = body  != null && !body.isEmpty()  ? body  : "";
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
-            .setContentTitle(title != null ? title : "Marina")
-            .setContentText(body)
+            .setContentTitle(safeTitle)
+            .setContentText(safeBody)
+            .setSubText("Marina")
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setNumber(unreadCount > 0 ? unreadCount : 1)
+            .setStyle(new NotificationCompat.BigTextStyle()
+                .bigText(safeBody)
+                .setBigContentTitle(safeTitle))
             .setContentIntent(pendingIntent);
 
         // Load sender avatar if available
         if (avatarUrl != null && !avatarUrl.isEmpty()) {
             Bitmap avatar = fetchBitmap(avatarUrl);
             if (avatar != null) {
-                builder.setLargeIcon(avatar)
-                       .setStyle(new NotificationCompat.BigTextStyle().bigText(body));
+                builder.setLargeIcon(avatar);
             }
         }
 
