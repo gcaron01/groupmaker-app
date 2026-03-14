@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.webkit.CookieManager;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -123,6 +124,20 @@ public class MainActivity extends BridgeActivity {
                 return true;
             }
         });
+
+        // Native share interface callable from JS: MarinaApp.share(title, url)
+        webView.addJavascriptInterface(new Object() {
+            @JavascriptInterface
+            public void share(String title, String url) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, title);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, title + "\n" + url);
+                Intent chooser = Intent.createChooser(shareIntent, "Partager via");
+                chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getApplicationContext().startActivity(chooser);
+            }
+        }, "MarinaApp");
 
         // Handle deep link URL passed via notification tap
         handleLaunchUrl(getIntent());
