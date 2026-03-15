@@ -18,7 +18,7 @@
             android:theme="@style/AppTheme.NoActionBarLaunch"
             android:launchMode="singleTask"
             android:exported="true"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:windowSoftInputMode="adjustResize">
 
             <intent-filter>
@@ -41,7 +41,7 @@
             android:name="fr.groupmaker.app.WeatherActivity"
             android:label="Météo marine"
             android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="false" />
 
         <!-- QR Scanner (native) -->
@@ -57,7 +57,7 @@
             android:name="fr.groupmaker.app.NotificationSettingsActivity"
             android:label="Notifications"
             android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="false" />
 
         <!-- Firebase Cloud Messaging service -->
