@@ -36,6 +36,30 @@
 
         </activity>
 
+        <!-- Weather (native) -->
+        <activity
+            android:name="fr.groupmaker.app.WeatherActivity"
+            android:label="Météo marine"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <!-- QR Scanner (native) -->
+        <activity
+            android:name="fr.groupmaker.app.QrScannerActivity"
+            android:label="Scanner QR"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <!-- Notification Settings (native) -->
+        <activity
+            android:name="fr.groupmaker.app.NotificationSettingsActivity"
+            android:label="Notifications"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
         <!-- Firebase Cloud Messaging service -->
         <service
             android:name="fr.groupmaker.marina.MarinaFirebaseMessagingService"
