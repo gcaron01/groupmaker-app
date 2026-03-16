@@ -87,7 +87,9 @@ public class MainActivity extends BridgeActivity {
             public boolean shouldOverrideUrlLoading(WebView view,
                     android.webkit.WebResourceRequest request) {
                 String host = request.getUrl().getHost();
-                if (host != null && host.equals(ALLOWED_HOST)) {
+                if (host != null && (host.equals(ALLOWED_HOST)
+                        || host.equals("groupmaker.fr")
+                        || host.equals("www.groupmaker.fr"))) {
                     return false;
                 }
                 Intent intent = new Intent(Intent.ACTION_VIEW, request.getUrl());
